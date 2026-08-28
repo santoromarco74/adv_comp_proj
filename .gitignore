@@ -1,6 +1,12 @@
 # eseguibili prodotti da nvcc
-benchmark
-test_host
+/benchmark
+/test_host
+/real_image_blur
 *.o
-# output del benchmark
-risultati.csv
+
+# output di lavoro alla radice (la copia in figure/ e' quella del report)
+/risultati.csv
+/output_blur.png
+/input.jpg
+/stb_image.h
+/stb_image_write.h
