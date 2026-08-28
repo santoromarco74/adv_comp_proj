@@ -1,0 +1,6 @@
+# eseguibili prodotti da nvcc
+benchmark
+test_host
+*.o
+# output del benchmark
+risultati.csv
