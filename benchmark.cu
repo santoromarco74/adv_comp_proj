@@ -714,6 +714,17 @@ static void writeCsv(const std::vector<SizeResult>& all, const std::string& path
 }
 
 // -----------------------------------------------------------------------------
+//  main
+//
+//  Racchiuso in una guardia cosi' che altri programmi (test_host.cu,
+//  real_image_blur.cu) possano fare #include di questo file e riusare i kernel
+//  e la reference CPU senza doverli ricopiare:
+//
+//      #define BOXBLUR_NO_MAIN
+//      #include "benchmark.cu"
+// -----------------------------------------------------------------------------
+
+#ifndef BOXBLUR_NO_MAIN
 
 int main(int argc, char** argv)
 {
@@ -749,3 +760,5 @@ int main(int argc, char** argv)
     CHECK(cudaDeviceReset());
     return allOk ? EXIT_SUCCESS : EXIT_FAILURE;
 }
+
+#endif  // BOXBLUR_NO_MAIN

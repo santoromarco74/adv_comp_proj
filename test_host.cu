@@ -2,9 +2,8 @@
 // indicizzazione, per verificare senza GPU che l'halo copra tutto il tile e che
 // i risultati coincidano con la reference CPU anche su dimensioni non multiple
 // di TILE_SIZE.
-#define main benchmark_main_unused
+#define BOXBLUR_NO_MAIN
 #include "benchmark.cu"
-#undef main
 
 #include <cassert>
 
